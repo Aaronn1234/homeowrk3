@@ -115,15 +115,23 @@ int main() {
 
         /* 1. Random BST */
         Node* randomBST = NULL;
+        start_time = clock();
         for (int j = 0; j < sizes[i]; j++) {
             randomBST = insertIterative(randomBST, unsortedArray[j]);
         }
+        end_time = clock();
+        time_taken = ((double)(end_time - start_time)) / CLOCKS_PER_SEC;
+        printf("Random BST Creation time: %f seconds\n", time_taken);
 
         /* 2. Sorted BST */
         Node* sortedBST = NULL;
+        start_time = clock()
         for (int j = 0; j < sizes[i]; j++) {
             sortedBST = insertIterative(sortedBST, sortedArray[j]);
         }
+        end_time = clock();
+        time_taken = ((double)(end_time - start_time)) / CLOCKS_PER_SEC;
+        printf("Sorted BST Creation time: %f seconds\n", time_taken);
 
         volatile Node* bstResult1 = NULL;
         start_time = clock();
